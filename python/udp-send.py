@@ -1,10 +1,10 @@
 #!/usr/bin/python
 import socket
 
-UDP_IP = "127.0.0.1"
-#UDP_UP = "54.204.9.175"
+#UDP_IP = "127.0.0.1"
+UDP_IP = "54.204.9.175"
 
-UDP_PORT = 5005
+UDP_PORT = 3000
 MESSAGE = "Hello, World!"
 
 print "UDP target IP:", UDP_IP
