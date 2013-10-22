@@ -23,7 +23,7 @@ simulation:
                 ( Autopilot )
             }
          )
-         
+/*         
          player2:
         ( Aircraft
             id: 12
@@ -39,5 +39,6 @@ simulation:
                 ( Autopilot )
             }
          )
-    }
+*/ 
+   }
 )
