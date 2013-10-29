@@ -1,8 +1,11 @@
+//------------------------------------------------------------------------------
+// Class: NetTester
+//------------------------------------------------------------------------------
 
 #include "NetTester.h"
 
 #include "openeaagles/basic/NetHandler.h"
-#include "openeaagles/basic/TcpHandler.h"
+#include "openeaagles/basic/nethandlers/TcpHandler.h"
 #include "openeaagles/basic/Number.h"
 
 namespace TestNet {
@@ -11,7 +14,7 @@ namespace TestNet {
 // NetTester
 //==============================================================================
 
-IMPLEMENT_SUBCLASS(NetTester,"NetTester")
+IMPLEMENT_SUBCLASS(NetTester, "NetTester")
 EMPTY_SERIALIZER(NetTester)
 
 BEGIN_SLOTTABLE(NetTester)
@@ -34,7 +37,7 @@ END_SLOT_MAP()
 //------------------------------------------------------------------------------
 // Constructor(s)
 //------------------------------------------------------------------------------
-NetTester::NetTester() : netInput(0), netHandler(0)
+NetTester::NetTester() : netHandler(0), netInput(0) 
 {
    STANDARD_CONSTRUCTOR()
 
