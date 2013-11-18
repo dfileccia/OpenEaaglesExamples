@@ -25,6 +25,37 @@ project "testEvents"
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
+ -- testInterop: Interoperability tests
+project "testInterop"
+   targetname "testInterop"
+   targetdir "../../testInterop"
+   debugdir "../../testInterop"
+   files {
+      "../../testInterop/**.cpp",
+      "../../testInterop/**.h",
+      "../../testInterop/**.epp",
+      "../../testInterop/**.edl"
+   }
+   includedirs { OEIncPath, OE3rdPartyIncPath }
+   libdirs     { OELibPath, OE3rdPartyLibPath }
+   defines { "_CONSOLE" }
+   configuration "Release"
+      links {"oeVehicles", "JSBSim"}
+      links {"oeOtw", LibCigi}
+      links {"oeDis", "oeSensors"}
+      links {"oeSimulation", "oeDafif", "oeTerrain"}
+      links {"oeGlut", "oeInstruments", "oeBasicGL", "oeBasic"}
+      links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   configuration "Debug"
+      links {"oeVehicles_d", "JSBSim_d"}
+      links {"oeOtw_d", LibCigi_d}
+      links {"oeDis_d", "oeSensors_d"}
+      links {"oeSimulation_d", "oeDafif_d", "oeTerrain_d"}
+      links {"oeGlut_d", "oeInstruments_d", "oeBasicGL_d", "oeBasic_d"}
+      links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
 -- testIo: I/O test
 project "testIo"
    targetname "testIo"

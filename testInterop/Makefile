@@ -1,0 +1,28 @@
+include ../makedefs
+
+PGM = testInterop 
+
+OBJS = testInterop.o
+
+LDFLAGS += -loeDis -loeSensors -loeVehicles -loeSimulation
+LDFLAGS += -loeOtw -loeDafif -loeBasic
+LDFLAGS += -lcigicl -lJSBSim 
+LDFLAGS += -lrt -lpthread 
+
+CPPFLAGS += -I/usr/local/include
+
+EPPFLAGS +=  -I.
+
+all: $(PGM) 
+
+edl:
+	cpp inputs/test.epp >test.edl   $(EPPFLAGS)
+
+$(PGM): $(OBJS)
+	$(CXX) -o $(PGM) $(OBJS) $(LDFLAGS) 
+
+clean:
+	-rm -f *.o
+	-rm -f $(PGM)
+
+
