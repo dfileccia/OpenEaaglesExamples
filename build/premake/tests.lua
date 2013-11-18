@@ -25,6 +25,37 @@ project "testEvents"
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
+ -- testInterop: Interoperability tests
+project "testInterop"
+   targetname "testInterop"
+   targetdir "../../testInterop"
+   debugdir "../../testInterop"
+   files {
+      "../../testInterop/**.cpp",
+      "../../testInterop/**.h",
+      "../../testInterop/**.epp",
+      "../../testInterop/**.edl"
+   }
+   includedirs { OEIncPath, OE3rdPartyIncPath }
+   libdirs     { OELibPath, OE3rdPartyLibPath }
+   defines { "_CONSOLE" }
+   configuration "Release"
+      links {"oeVehicles", "JSBSim"}
+      links {"oeOtw", LibCigi}
+      links {"oeDis", "oeSensors"}
+      links {"oeSimulation", "oeDafif", "oeTerrain"}
+      links {"oeGlut", "oeInstruments", "oeBasicGL", "oeBasic"}
+      links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   configuration "Debug"
+      links {"oeVehicles_d", "JSBSim_d"}
+      links {"oeOtw_d", LibCigi_d}
+      links {"oeDis_d", "oeSensors_d"}
+      links {"oeSimulation_d", "oeDafif_d", "oeTerrain_d"}
+      links {"oeGlut_d", "oeInstruments_d", "oeBasicGL_d", "oeBasic_d"}
+      links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
 -- testIo: I/O test
 project "testIo"
    targetname "testIo"
@@ -69,16 +100,16 @@ project "testLinearSys"
       links {"oeLinearSys_d", "oeBasic_d"}
       links {"Ws2_32", "Winmm", "comctl32"}
 
--- testNavigation
-project "testNavigation"
-   targetname "testNavigation"
-   targetdir "../../testNavigation"
-   debugdir "../../testNavigation"
+-- testNav
+project "testNav"
+   targetname "testNav"
+   targetdir "../../testNav"
+   debugdir "../../testNav"
    files {
-      "../../testNavigation/**.cpp",
-      "../../testNavigation/**.h",
-      "../../testNavigation/**.epp",
-      "../../testNavigation/**.edl"
+      "../../testNav/**.cpp",
+      "../../testNav/**.h",
+      "../../testNav/**.epp",
+      "../../testNav/**.edl"
    }
    includedirs { OEIncPath }
    libdirs     { OELibPath }
@@ -111,16 +142,16 @@ project "testMatrix"
       links {"oeBasic_d"}
       links {"Ws2_32", "Winmm", "comctl32"}
 
--- testNetHandler
-project "testNetHandler"
-   targetname "testNetHandler"
-   targetdir "../../testNetHandler"
-   debugdir "../../testNetHandler"
+-- testNet
+project "testNet"
+   targetname "testNet"
+   targetdir "../../testNet"
+   debugdir "../../testNet"
    files {
-      "../../testNetHandler/**.cpp",
-      "../../testNetHandler/**.h",
-      "../../testNetHandler/**.epp",
-      "../../testNetHandler/**.edl"
+      "../../testNet/**.cpp",
+      "../../testNet/**.h",
+      "../../testNet/**.epp",
+      "../../testNet/**.edl"
    }
    includedirs { OEIncPath }
    libdirs     { OELibPath }
@@ -131,6 +162,7 @@ project "testNetHandler"
    configuration "Debug"
       links {"oeBasic_d"}
       links {"Ws2_32", "Winmm", "comctl32"}
+
 
 -- testRecordData
 project "testRecordData"
