@@ -257,7 +257,7 @@ project "mainPuzzle2"
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
- -- simple Simulation 1 example
+-- simple Simulation 1 example
 project "mainSim1"
    targetname "mainSim1"
    targetdir "../../mainSim1"
